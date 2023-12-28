@@ -18,10 +18,10 @@
 먼저, 다음이 컴퓨터에 설치되어 있는지 확인하세요:
 
 - node.Js
-  <img src="./img/nodedotjs.svg">
+  <center><img src="./img/nodedotjs.svg" width="300" height="300"></center>
   <br>
 - npm
-  <img src="./img/npm.svg">
+  <center><img src="./img/npm.svg" width="300" height="300"></center>
   <br>
 
 ## Installation
