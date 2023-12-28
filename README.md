@@ -17,10 +17,10 @@
 
 먼저, 다음이 컴퓨터에 설치되어 있는지 확인하세요:
 
-<p align="center">node.Js</p><br/>
+<h2 align="center">node.Js</h2><br/>
   <p align="center"><img src="./img/nodedotjs.svg" width="200" height="200"></p>
   <br>
-<p align="center">npm</p><br/>
+<h2 align="center">npm</h2><br/>
   <p align="center"><img src="./img/npm.svg" width="200" height="200"></p>
   <br>
 
