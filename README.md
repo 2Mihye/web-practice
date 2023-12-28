@@ -11,34 +11,38 @@
 
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=reason&logoColor=black">
 
-nodeJs와 Express를 활용한 backend 구성 React를 활용한 Frontend 구성
+이 프로젝트는 React를 사용하여 개발된 웹사이트입니다. 이 페이지에서는 프로젝트에 관한 정보, 설정 방법, 그리고 기타 관련된 세부 사항을 찾을 수 있습니다.
 
+## Prerequisites
+먼저, 다음이 컴퓨터에 설치되어 있는지 확인하세요:
+
+* node.Js
+* npm
+
+
+## Installation
+
+1. Clone the repository:
 ```bash
-pip install foobar
+git clone https://github.com/2Mihye/web-practice
+```
+2. Change into the project directory:
+```bash
+#backend
+cd server
+```
+```bash
+#frontend
+cd client
+```
+두 폴더 안에서 3번을 각 1회씩 터미널에 입력후 실행
+3. Install dependencies:
+```bash
+npm install
 ```
 
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+## Running the Application
+실행하기
+```bash
+npm start
 ```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
