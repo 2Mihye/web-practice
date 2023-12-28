@@ -17,10 +17,10 @@
 
 먼저, 다음이 컴퓨터에 설치되어 있는지 확인하세요:
 
-- node.Js
+- node.Js <br/>
   <center><img src="./img/nodedotjs.svg" width="200" height="200"></center>
   <br>
-- npm
+- npm<br/>
   <center><img src="./img/npm.svg" width="200" height="200"></center>
   <br>
 
