@@ -1,0 +1,39 @@
+.TodoList {
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+}
+
+#toDoInput {
+  font-size: large;
+  margin-left: 600px;
+  margin-right: 8px;
+  margin-bottom: 50px;
+  width: 40%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  text-align: center;
+  background-color: #f49e36;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
