@@ -27,8 +27,11 @@ export default function Header() {
           <Nav.Link as={Link} to={"/Movies"}>
             | Movies |
           </Nav.Link>
-          <Nav.Link as={Link} to={"/TodoNoCss"}>
+          <Nav.Link as={Link} to={"/TodoList"}>
             | Todo List |
+          </Nav.Link>
+          <Nav.Link as={Link} to={"/WeatherSearch"}>
+            | WeatherSearch |
           </Nav.Link>
           <NavDropdown title="|  Games  |" id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to="/NumberGuessingGameLimit">
@@ -36,6 +39,9 @@ export default function Header() {
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Quiz">
               Quiz
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/FastClick">
+              Fast Click
             </NavDropdown.Item>
           </NavDropdown>
         </Navbar.Collapse>

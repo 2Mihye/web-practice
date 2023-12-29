@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Quiz = () => {
@@ -79,6 +80,13 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
+  // 프로그래스바가 100% 되는 값을 넣어주는 함수 생성
+  /* currentQuestion : 현재 사용자가 답한 질문의 번호를 나타내는 상태
+    questions.length : 전체 질문의 갯수
+    ex) currentQuestions 이 1이고, questions.length가 7이면 progress는 (1/7) * 100 으로 계산되어 약 14.29%가 됨. 15.29%는 사용자가 퀴즈를 14.29% 완료했음을 보여줄 수 있음.
+  */
+  const progress = (currentQuestion / questions.length) * 100;
+
   const AnswerButtonClick = (selectedOption) => {
     if (selectedOption === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
@@ -112,14 +120,20 @@ const Quiz = () => {
         </div>
       ) : (
         // card, card-body, card-title
+        // toFixed는 소수점 2자리까지만 허용해준다는 뜻
         <div>
+          <ProgressBar
+            variant="warning"
+            now={progress}
+            style={{ height: "20px", borderRadius: "10px" }}
+            label={`${progress.toFixed(2)} %`}
+          />
           <div className="card mb-3">
             <div className="card-body">
-              <h2 className="card-title">질문 : {currentQuestion + 1}</h2>
+              <h2 className="card-title">질문 {currentQuestion + 1}</h2>
               <p className="card-text">{questions[currentQuestion].question}</p>
             </div>
           </div>
-
           <div>
             {questions[currentQuestion].options.map((option) => (
               <button

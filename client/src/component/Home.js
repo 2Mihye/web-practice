@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Emoji from "./Emoji";
 
 const Home = () => {
   return (
@@ -23,6 +24,9 @@ const Home = () => {
         </div>
       </Row>
       <Row>
+        <Emoji />
+      </Row>
+      <Row>
         <div className="col-3 text-center">
           <h2>Movies</h2>
           <p>여러 영화의 포스터와 평점 !</p>
@@ -33,7 +37,7 @@ const Home = () => {
         <div className="col-3 text-center">
           <h2>To Do</h2>
           <p>할 일을 기록하고 갓생살기 !</p>
-          <Link to="/TodoNoCss">
+          <Link to="/TodoList">
             <Button variant="warning">Todo List</Button>
           </Link>
         </div>

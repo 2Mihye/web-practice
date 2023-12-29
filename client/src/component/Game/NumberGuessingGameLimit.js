@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NumberGuessingGame = () => {
@@ -15,19 +16,25 @@ const NumberGuessingGame = () => {
   // 작성한 숫자 기록
   const [guessHistory, setGuessHistory] = useState([]);
 
+  const [progress, setProgress] = useState(0);
+
   // 숫자값이 들어올 때마다 숫자값 변경해주는 함수
   const inputChange = (event) => {
     setUserGuess(event.target.value);
   };
-
   // useEffect를 사용하여 게임 횟수 제한을 둘 예정
   useEffect(() => {
+    // 만약 100에서 감소하게 만들고 싶다면 (attempts / 5) * 100;
+    const newProgress = ((5 - attempts) / 5) * 100; // 5번의 기회가 있기 때문에 5를 기준으로 숫자를 넣을 수록 기회가 감소하므로 - attempts를 넣어준다.
+    setProgress(newProgress);
+
     // 만약 횟수가 끝났다면
     if (attempts === 0) {
       setMessage(`Game Over! 정답은 ${targetNumber} 입니다!`);
       setTargetNumber(randomNumber()); // 게임이 종료되었으므로 숫자를 랜덤으로 다시 생성
       setAttempts(5); // 횟수는 다시 5회로 만들어주고
       setGuessHistory([]); // 사용자가 작성한 기록은 모두 지움
+      setProgress(0);
     }
   }, [attempts, targetNumber]);
 
@@ -53,16 +60,19 @@ const NumberGuessingGame = () => {
         setTargetNumber(randomNumber());
         setAttempts(5);
         setGuessHistory([]);
+        setProgress(0);
       } else {
         // 숫자가 틀렸을 때 횟수를 차감하는 함수 작성
         const remainAttempts = attempts - 1;
         setAttempts(remainAttempts);
+        // const progress = (remainAttempts / 5) * 100;
 
         if (remainAttempts === 0) {
           setMessage(`Game Over ! 정답은 ${targetNumber} 입니다.`);
           setTargetNumber(randomNumber());
           setAttempts(5);
           setGuessHistory([]);
+          setProgress(0);
         } else {
           setMessage(
             guess < targetNumber
@@ -78,6 +88,12 @@ const NumberGuessingGame = () => {
 
   return (
     <div className="container mt-5">
+      <ProgressBar
+        className="mb-3"
+        variant="danger"
+        now={progress}
+        label={`${progress.toFixed(2)} %`}
+      />
       <div className="card">
         <div className="card-body">
           <h1 className="card-title text-center"> 숫자 맞추기 게임 !</h1>
