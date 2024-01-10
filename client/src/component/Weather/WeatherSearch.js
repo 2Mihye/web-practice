@@ -27,17 +27,19 @@ export default function Weather() {
     <div className="Container mt-5">
       <div className="text-center">
         <h1 className="mb-4">날씨</h1>
-        <div className="mb-3">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="도시를 입력하세요."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button className="btn btn-info mt-2" onClick={searchWeather}>
-            도시검색
-          </button>
+        <div className="d-flex justify-content-center">
+          <div className="col-md-2 mb-3 text-center">
+            <input
+              className="form-control "
+              type="text"
+              placeholder="도시를 입력하세요."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button className="btn btn-info mt-2" onClick={searchWeather}>
+              도시검색
+            </button>
+          </div>
         </div>
         <div>
           {loading && <p>검색중...</p>}
