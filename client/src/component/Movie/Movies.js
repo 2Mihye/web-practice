@@ -4,6 +4,18 @@ import MovieCard from "./MovieCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 
+// 직접 만든 화살표 아이콘 컴포넌트
+const CustomPrevIcon = () => (
+  <span style={{ color: "black", fontSize: "2rem", fontWeight: "bold" }}>
+    &lt;
+  </span>
+);
+const CustomNextIcon = () => (
+  <span style={{ color: "black", fontSize: "2rem", fontWeight: "bold" }}>
+    &gt;
+  </span>
+);
+
 const MovieReview = () => {
   const [movies, setMovies] = useState([]);
 
@@ -29,7 +41,17 @@ const MovieReview = () => {
       <div className="card">
         <div className="card-body text-center">
           <h1 className="card-title">Movies</h1>
-          <Carousel>
+          <style>
+            {`
+              .carousel-indicators {
+                bottom: -40px; /* 하단 바 위치 조정 */
+              }
+              .carousel-indicators [data-bs-target] {
+              background-color: violet;
+            }
+            `}
+          </style>
+          <Carousel prevIcon={<CustomPrevIcon />} nextIcon={<CustomNextIcon />}>
             {movies.map((movie) => (
               <Carousel.Item key={movie.id}>
                 <MovieCard movie={movie} />
